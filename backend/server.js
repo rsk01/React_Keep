@@ -28,17 +28,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-router.get('/getData', (req, res) => {
+router.get('/getData', (_req, res) => {
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true, data: data });
   });
 });
-router.put('/updateData', (req, res) => {
+router.put('/updateData', (_req, res) => {
   const { id, update } = req.body;
   Data.findByIdAndUpdate(id, update, (err) => {
     if (err) return res.json({ success: false, error: err });
-    return res.json({ success: true });
+    return res.json({ success: true, data: update});
   });
 });
 router.delete('/deleteData', (req, res) => {

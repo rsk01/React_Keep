@@ -1,14 +1,12 @@
 {
   "name": "fullstack_app",
-  "version": "1.0.0",
-  "description": "",
+  "description": "My first app",
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "rsk",
   "dependencies": {
     "@material-ui/core": "^4.3.0",
     "bootstrap": "^4.3.1",
