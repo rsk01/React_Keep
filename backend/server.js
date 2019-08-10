@@ -28,13 +28,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-router.get('/getData', (_req, res) => {
+router.get('/getData', (req, res) => {
   Data.find((err, data) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true, data: data });
   });
 });
-router.put('/updateData', (_req, res) => {
+router.put('/updateData', (req, res) => {
   const { id, update } = req.body;
   Data.findByIdAndUpdate(id, update, (err) => {
     if (err) return res.json({ success: false, error: err });
