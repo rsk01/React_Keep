@@ -53,13 +53,6 @@ router.post('/putData', (req, res) => {
   let data = new Data();
 
   const { id, message, title } = req.body;
-
-  if ((!id && id !== 0) || !message ) {
-    return res.json({
-      success: false,
-      error: 'INVALID INPUTS',
-    });
-  }
   data.message = message;
   data.title = title;
   data.id = id;
